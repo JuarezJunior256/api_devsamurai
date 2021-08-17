@@ -1,7 +1,7 @@
-let customers = [
-  { id: 1, name: "Danielle", email: "danielle@email.com" },
-  { id: 2, name: "Jéssica", email: "jeh@email.com" },
-  { id: 3, name: "Junior", email: "juh@email.com" },
+const customers = [
+  { id: 1, name: 'Danielle', email: 'danielle@email.com' },
+  { id: 2, name: 'Jéssica', email: 'jeh@email.com' },
+  { id: 3, name: 'Junior', email: 'juh@email.com' },
 ];
 
 class CustomerController {
@@ -18,9 +18,12 @@ class CustomerController {
 
     return res.status(status).json(customer);
   }
+
   create(req, res) {}
+
   update(req, res) {}
+
   destroy(req, res) {}
 }
 
-module.exports = new CustomerController();
+export default new CustomerController();
