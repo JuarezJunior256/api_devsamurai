@@ -1,29 +1,26 @@
-const customers = [
-  { id: 1, name: 'Danielle', email: 'danielle@email.com' },
-  { id: 2, name: 'Jéssica', email: 'jeh@email.com' },
-  { id: 3, name: 'Junior', email: 'juh@email.com' },
-];
+import Customer from "../models/Customer";
 
 class CustomerController {
-  constructor() {}
+  async index(req, res) {
+    const data = await Customer.findAll({
+      limit: 1000,
+    });
 
-  index(req, res) {
-    return res.json(customers);
+    return res.json(data);
   }
 
-  show(req, res) {
-    const id = parseInt(req.params.id);
-    const customer = customers.find((item) => item.id === id);
-    const status = customer ? 200 : 404;
+  // show(req, res) {
+  //   // const id = parseInt(req.params.id);
+  //   // const customer = customers.find((item) => item.id === id);
+  //   // const status = customer ? 200 : 404;
+  //   // return res.status(status).json(customer);
+  // }
 
-    return res.status(status).json(customer);
-  }
+  // create(req, res) {}
 
-  create(req, res) {}
+  // update(req, res) {}
 
-  update(req, res) {}
-
-  destroy(req, res) {}
+  // destroy(req, res) {}
 }
 
 export default new CustomerController();

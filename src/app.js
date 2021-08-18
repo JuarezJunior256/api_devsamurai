@@ -1,6 +1,8 @@
 // class princinpal da estrutura do serviço de API
-import express from 'express';
-import routes from './routes';
+import express from "express";
+import routes from "./routes";
+
+import "./database";
 
 class App {
   constructor() {
