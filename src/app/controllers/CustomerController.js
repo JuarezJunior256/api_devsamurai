@@ -1,3 +1,4 @@
+import * as Yup from "yup";
 import { Op } from "sequelize";
 import { parseISO } from "date-fns";
 
@@ -104,6 +105,66 @@ class CustomerController {
     });
 
     return res.json(data);
+  }
+
+  async show(req, res) {
+    const customer = await Customer.findByPk(req.params.id);
+
+    if (!customer) {
+      return res.status(404).json();
+    }
+
+    return res.json(customer);
+  }
+
+  async create(req, res) {
+    const schema = Yup.object().shape({
+      name: Yup.string().required(),
+      email: Yup.string().email().required(),
+      status: Yup.string().uppercase(),
+    });
+
+    if (!(await schema.isValid(req.body))) {
+      return res.status(400).json({ error: "Error on validate schema." });
+    }
+
+    const customer = await Customer.create(req.body);
+
+    return res.status(201).json(customer);
+  }
+
+  async update(req, res) {
+    const schema = Yup.object().shape({
+      name: Yup.string(),
+      email: Yup.string().email(),
+      status: Yup.string().uppercase(),
+    });
+
+    if (!(await schema.isValid(req.body))) {
+      return res.status(400).json({ error: "Error on validate schema." });
+    }
+
+    const customer = await Customer.findByPk(req.params.id);
+
+    if (!customer) {
+      return res.status(404).json();
+    }
+
+    await customer.update(req.body);
+
+    return res.json(customer);
+  }
+
+  async destroy(req, res) {
+    const customer = await Customer.findByPk(req.params.id);
+
+    if (!customer) {
+      return res.status(404).json();
+    }
+
+    await customer.destroy();
+
+    return res.json();
   }
 }
 
