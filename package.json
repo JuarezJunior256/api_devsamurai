@@ -10,6 +10,7 @@
   "author": "Juarez Junior",
   "license": "ISC",
   "dependencies": {
+    "date-fns": "^2.23.0",
     "express": "^4.17.1",
     "mysql2": "^2.3.0",
     "pg": "^8.7.1",

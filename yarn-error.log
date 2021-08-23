@@ -1,0 +1,65 @@
+Arguments: 
+  C:\Program Files\nodejs\node.exe C:\Program Files (x86)\Yarn\bin\yarn.js add date-nfs
+
+PATH: 
+  C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\Program Files\nodejs\;C:\Program Files\Git\cmd;C:\ProgramData\chocolatey\bin;C:\Program Files (x86)\Yarn\bin\;C:\Program Files\PostgreSQL\12\bin;C:\wamp64\bin\php\php7.3.21;C:\composer;C:\Program Files\MySQL\MySQL Shell 8.0\bin\;C:\Users\juare\AppData\Local\Microsoft\WindowsApps;;C:\Users\juare\AppData\Local\Programs\Microsoft VS Code\bin;C:\Users\juare\AppData\Roaming\npm;C:\Users\juare\AppData\Local\Yarn\bin;C:\Users\juare\AppData\Roaming\Composer\vendor\bin
+
+Yarn version: 
+  1.22.0
+
+Node version: 
+  12.16.1
+
+Platform: 
+  win32 x64
+
+Trace: 
+  Error: https://registry.yarnpkg.com/date-nfs: Not found
+      at Request.params.callback [as _callback] (C:\Program Files (x86)\Yarn\lib\cli.js:66084:18)
+      at Request.self.callback (C:\Program Files (x86)\Yarn\lib\cli.js:140727:22)
+      at Request.emit (events.js:311:20)
+      at Request.<anonymous> (C:\Program Files (x86)\Yarn\lib\cli.js:141699:10)
+      at Request.emit (events.js:311:20)
+      at IncomingMessage.<anonymous> (C:\Program Files (x86)\Yarn\lib\cli.js:141621:12)
+      at Object.onceWrapper (events.js:417:28)
+      at IncomingMessage.emit (events.js:323:22)
+      at endReadableNT (_stream_readable.js:1204:12)
+      at processTicksAndRejections (internal/process/task_queues.js:84:21)
+
+npm manifest: 
+  {
+    "name": "api",
+    "version": "1.0.0",
+    "description": "Aplicação de uma API para fins didaticos",
+    "main": "index.js",
+    "scripts": {
+      "test": "echo \"Error: no test specified\" && exit 1",
+      "start": "nodemon ./src/server.js"
+    },
+    "author": "Juarez Junior",
+    "license": "ISC",
+    "dependencies": {
+      "express": "^4.17.1",
+      "mysql2": "^2.3.0",
+      "pg": "^8.7.1",
+      "pg-hstore": "^2.3.4",
+      "sequelize": "^6.6.5"
+    },
+    "devDependencies": {
+      "eslint": "^7.32.0",
+      "eslint-config-airbnb-base": "^14.2.1",
+      "eslint-config-prettier": "^8.3.0",
+      "eslint-plugin-import": "^2.24.0",
+      "eslint-plugin-prettier": "^3.4.0",
+      "nodemon": "^2.0.12",
+      "prettier": "^2.3.2",
+      "sequelize-cli": "^6.2.0",
+      "sucrase": "^3.20.1"
+    }
+  }
+
+yarn manifest: 
+  No manifest
+
+Lockfile: 
+  No lockfile
